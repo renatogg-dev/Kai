@@ -1,0 +1,6 @@
+venv/
+.env
+__pycache__/
+*.pyc
+store/
+projeto_kai_rag_plano_v1.md
