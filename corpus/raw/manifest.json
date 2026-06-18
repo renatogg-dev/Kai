@@ -1,0 +1,15 @@
+{
+  "python_sqlite3.html": "https://docs.python.org/3/library/sqlite3.html",
+  "python_datetime.html": "https://docs.python.org/3/library/datetime.html",
+  "python_datastructures.html": "https://docs.python.org/3/tutorial/datastructures.html",
+  "python_controlflow.html": "https://docs.python.org/3/tutorial/controlflow.html",
+  "python_classes.html": "https://docs.python.org/3/tutorial/classes.html",
+  "python_errors.html": "https://docs.python.org/3/tutorial/errors.html",
+  "python_modules.html": "https://docs.python.org/3/tutorial/modules.html",
+  "sqlite_select.html": "https://www.sqlite.org/lang_select.html",
+  "sqlite_aggfunc.html": "https://www.sqlite.org/lang_aggfunc.html",
+  "sqlite_createtable.html": "https://www.sqlite.org/lang_createtable.html",
+  "postgres_select.html": "https://www.postgresql.org/docs/current/sql-select.html",
+  "postgres_aggregate.html": "https://www.postgresql.org/docs/current/functions-aggregate.html",
+  "postgres_datatype.html": "https://www.postgresql.org/docs/current/datatype.html"
+}
