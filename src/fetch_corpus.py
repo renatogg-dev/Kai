@@ -29,6 +29,7 @@ for filename, url in SOURCES.items():
     print(f"Baixando {url} -> {dest}")
     resp = requests.get(url, headers=headers, timeout=15)
     resp.raise_for_status()
+    resp.encoding = resp.apparent_encoding  
     dest.write_text(resp.text, encoding="utf-8")
     manifest[filename] = url
 

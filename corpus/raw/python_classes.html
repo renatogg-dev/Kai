@@ -234,13 +234,13 @@
           <div class="body" role="main">
             
   <section id="classes">
-<span id="tut-classes"></span><h1><span class="section-number">9. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading">Â¶</a></h1>
+<span id="tut-classes"></span><h1><span class="section-number">9. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h1>
 <p>Classes provide a means of bundling data and functionality together.  Creating
 a new class creates a new <em>type</em> of object, allowing new <em>instances</em> of that
 type to be made.  Each class instance can have attributes attached to it for
 maintaining its state.  Class instances can also have methods (defined by its
 class) for modifying its state.</p>
-<p>Compared with other programming languages, Pythonâs class mechanism adds classes
+<p>Compared with other programming languages, Python’s class mechanism adds classes
 with a minimum of new syntax and semantics.  It is a mixture of the class
 mechanisms found in C++ and Modula-3.  Python classes provide all the standard
 features of Object Oriented Programming: the class inheritance mechanism allows
@@ -251,7 +251,7 @@ modules, classes partake of the dynamic nature of Python: they are created at
 runtime, and can be modified further after creation.</p>
 <p>In C++ terminology, normally class members (including the data members) are
 <em>public</em> (except see below <a class="reference internal" href="#tut-private"><span class="std std-ref">Private Variables</span></a>), and all member functions are
-<em>virtual</em>.  As in Modula-3, there are no shorthands for referencing the objectâs
+<em>virtual</em>.  As in Modula-3, there are no shorthands for referencing the object’s
 members from its methods: the method function is declared with an explicit first
 argument representing the object, which is provided implicitly by the call.  As
 in Smalltalk, classes themselves are objects.  This provides semantics for
@@ -264,7 +264,7 @@ occasional use of Smalltalk and C++ terms.  I would use Modula-3 terms, since
 its object-oriented semantics are closer to those of Python than C++, but I
 expect that few readers have heard of it.)</p>
 <section id="a-word-about-names-and-objects">
-<span id="tut-object"></span><h2><span class="section-number">9.1. </span>A Word About Names and Objects<a class="headerlink" href="#a-word-about-names-and-objects" title="Link to this heading">Â¶</a></h2>
+<span id="tut-object"></span><h2><span class="section-number">9.1. </span>A Word About Names and Objects<a class="headerlink" href="#a-word-about-names-and-objects" title="Link to this heading">¶</a></h2>
 <p>Objects have individuality, and multiple names (in multiple scopes) can be bound
 to the same object.  This is known as aliasing in other languages.  This is
 usually not appreciated on a first glance at Python, and can be safely ignored
@@ -274,33 +274,33 @@ involving mutable objects such as lists, dictionaries, and most other types.
 This is usually used to the benefit of the program, since aliases behave like
 pointers in some respects.  For example, passing an object is cheap since only a
 pointer is passed by the implementation; and if a function modifies an object
-passed as an argument, the caller will see the change â this eliminates the
+passed as an argument, the caller will see the change — this eliminates the
 need for two different argument passing mechanisms as in Pascal.</p>
 </section>
 <section id="python-scopes-and-namespaces">
-<span id="tut-scopes"></span><h2><span class="section-number">9.2. </span>Python Scopes and Namespaces<a class="headerlink" href="#python-scopes-and-namespaces" title="Link to this heading">Â¶</a></h2>
-<p>Before introducing classes, I first have to tell you something about Pythonâs
+<span id="tut-scopes"></span><h2><span class="section-number">9.2. </span>Python Scopes and Namespaces<a class="headerlink" href="#python-scopes-and-namespaces" title="Link to this heading">¶</a></h2>
+<p>Before introducing classes, I first have to tell you something about Python’s
 scope rules.  Class definitions play some neat tricks with namespaces, and you
-need to know how scopes and namespaces work to fully understand whatâs going on.
+need to know how scopes and namespaces work to fully understand what’s going on.
 Incidentally, knowledge about this subject is useful for any advanced Python
 programmer.</p>
-<p>Letâs begin with some definitions.</p>
+<p>Let’s begin with some definitions.</p>
 <p>A <em>namespace</em> is a mapping from names to objects.  Most namespaces are currently
-implemented as Python dictionaries, but thatâs normally not noticeable in any
+implemented as Python dictionaries, but that’s normally not noticeable in any
 way (except for performance), and it may change in the future.  Examples of
 namespaces are: the set of built-in names (containing functions such as <a class="reference internal" href="../library/functions.html#abs" title="abs"><code class="xref py py-func docutils literal notranslate"><span class="pre">abs()</span></code></a>, and
 built-in exception names); the global names in a module; and the local names in
 a function invocation.  In a sense the set of attributes of an object also form
 a namespace.  The important thing to know about namespaces is that there is
 absolutely no relation between names in different namespaces; for instance, two
-different modules may both define a function <code class="docutils literal notranslate"><span class="pre">maximize</span></code> without confusion â
+different modules may both define a function <code class="docutils literal notranslate"><span class="pre">maximize</span></code> without confusion —
 users of the modules must prefix it with the module name.</p>
-<p>By the way, I use the word <em>attribute</em> for any name following a dot â for
+<p>By the way, I use the word <em>attribute</em> for any name following a dot — for
 example, in the expression <code class="docutils literal notranslate"><span class="pre">z.real</span></code>, <code class="docutils literal notranslate"><span class="pre">real</span></code> is an attribute of the object
 <code class="docutils literal notranslate"><span class="pre">z</span></code>.  Strictly speaking, references to names in modules are attribute
 references: in the expression <code class="docutils literal notranslate"><span class="pre">modname.funcname</span></code>, <code class="docutils literal notranslate"><span class="pre">modname</span></code> is a module
 object and <code class="docutils literal notranslate"><span class="pre">funcname</span></code> is an attribute of it.  In this case there happens to be
-a straightforward mapping between the moduleâs attributes and the global names
+a straightforward mapping between the module’s attributes and the global names
 defined in the module: they share the same namespace!  <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>Attributes may be read-only or writable.  In the latter case, assignment to
 attributes is possible.  Module attributes are writable: you can write
@@ -322,7 +322,7 @@ within the function.  (Actually, forgetting would be a better way to describe
 what actually happens.)  Of course, recursive invocations each have their own
 local namespace.</p>
 <p>A <em>scope</em> is a textual region of a Python program where a namespace is directly
-accessible.  âDirectly accessibleâ here means that an unqualified reference to a
+accessible.  “Directly accessible” here means that an unqualified reference to a
 name attempts to find the name in the namespace.</p>
 <p>Although scopes are determined statically, they are used dynamically. At any
 time during execution, there are 3 or 4 nested scopes whose namespaces are
@@ -331,29 +331,29 @@ directly accessible:</p>
 <li><p>the innermost scope, which is searched first, contains the local names</p></li>
 <li><p>the scopes of any enclosing functions, which are searched starting with the
 nearest enclosing scope, contain non-local, but also non-global names</p></li>
-<li><p>the next-to-last scope contains the current moduleâs global names</p></li>
+<li><p>the next-to-last scope contains the current module’s global names</p></li>
 <li><p>the outermost scope (searched last) is the namespace containing built-in names</p></li>
 </ul>
 <p>If a name is declared global, then all references and assignments go directly to
-the next-to-last scope containing the moduleâs global names.  To rebind variables
+the next-to-last scope containing the module’s global names.  To rebind variables
 found outside of the innermost scope, the <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> statement can be
 used; if not declared nonlocal, those variables are read-only (an attempt to
 write to such a variable will simply create a <em>new</em> local variable in the
 innermost scope, leaving the identically named outer variable unchanged).</p>
 <p>Usually, the local scope references the local names of the (textually) current
 function.  Outside functions, the local scope references the same namespace as
-the global scope: the moduleâs namespace. Class definitions place yet another
+the global scope: the module’s namespace. Class definitions place yet another
 namespace in the local scope.</p>
 <p>It is important to realize that scopes are determined textually: the global
-scope of a function defined in a module is that moduleâs namespace, no matter
+scope of a function defined in a module is that module’s namespace, no matter
 from where or by what alias the function is called.  On the other hand, the
-actual search for names is done dynamically, at run time â however, the
-language definition is evolving towards static name resolution, at âcompileâ
-time, so donât rely on dynamic name resolution!  (In fact, local variables are
+actual search for names is done dynamically, at run time — however, the
+language definition is evolving towards static name resolution, at “compile”
+time, so don’t rely on dynamic name resolution!  (In fact, local variables are
 already determined statically.)</p>
-<p>A special quirk of Python is that â if no <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> or <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a>
-statement is in effect â assignments to names always go into the innermost scope.
-Assignments do not copy data â they just bind names to objects.  The same is true
+<p>A special quirk of Python is that – if no <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> or <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a>
+statement is in effect – assignments to names always go into the innermost scope.
+Assignments do not copy data — they just bind names to objects.  The same is true
 for deletions: the statement <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">x</span></code> removes the binding of <code class="docutils literal notranslate"><span class="pre">x</span></code> from the
 namespace referenced by the local scope.  In fact, all operations that introduce
 new names use the local scope: in particular, <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> statements and
@@ -363,7 +363,7 @@ variables live in the global scope and should be rebound there; the
 <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> statement indicates that particular variables live in
 an enclosing scope and should be rebound there.</p>
 <section id="scopes-and-namespaces-example">
-<span id="tut-scopeexample"></span><h3><span class="section-number">9.2.1. </span>Scopes and Namespaces Example<a class="headerlink" href="#scopes-and-namespaces-example" title="Link to this heading">Â¶</a></h3>
+<span id="tut-scopeexample"></span><h3><span class="section-number">9.2.1. </span>Scopes and Namespaces Example<a class="headerlink" href="#scopes-and-namespaces-example" title="Link to this heading">¶</a></h3>
 <p>This is an example demonstrating how to reference the different scopes and
 namespaces, and how <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> and <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> affect variable
 binding:</p>
@@ -398,7 +398,7 @@ After global assignment: nonlocal spam
 In global scope: global spam
 </pre></div>
 </div>
-<p>Note how the <em>local</em> assignment (which is default) didnât change <em>scope_test</em>'s
+<p>Note how the <em>local</em> assignment (which is default) didn’t change <em>scope_test</em>'s
 binding of <em>spam</em>.  The <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> assignment changed <em>scope_test</em>'s
 binding of <em>spam</em>, and the <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> assignment changed the module-level
 binding.</p>
@@ -407,11 +407,11 @@ binding.</p>
 </section>
 </section>
 <section id="a-first-look-at-classes">
-<span id="tut-firstclasses"></span><h2><span class="section-number">9.3. </span>A First Look at Classes<a class="headerlink" href="#a-first-look-at-classes" title="Link to this heading">Â¶</a></h2>
+<span id="tut-firstclasses"></span><h2><span class="section-number">9.3. </span>A First Look at Classes<a class="headerlink" href="#a-first-look-at-classes" title="Link to this heading">¶</a></h2>
 <p>Classes introduce a little bit of new syntax, three new object types, and some
 new semantics.</p>
 <section id="class-definition-syntax">
-<span id="tut-classdefinition"></span><h3><span class="section-number">9.3.1. </span>Class Definition Syntax<a class="headerlink" href="#class-definition-syntax" title="Link to this heading">Â¶</a></h3>
+<span id="tut-classdefinition"></span><h3><span class="section-number">9.3.1. </span>Class Definition Syntax<a class="headerlink" href="#class-definition-syntax" title="Link to this heading">¶</a></h3>
 <p>The simplest form of class definition looks like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ClassName</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
@@ -425,29 +425,29 @@ new semantics.</p>
 executed before they have any effect.  (You could conceivably place a class
 definition in a branch of an <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> statement, or inside a function.)</p>
 <p>In practice, the statements inside a class definition will usually be function
-definitions, but other statements are allowed, and sometimes useful â weâll
+definitions, but other statements are allowed, and sometimes useful — we’ll
 come back to this later.  The function definitions inside a class normally have
 a peculiar form of argument list, dictated by the calling conventions for
-methods â again, this is explained later.</p>
+methods — again, this is explained later.</p>
 <p>When a class definition is entered, a new namespace is created, and used as the
-local scope â thus, all assignments to local variables go into this new
+local scope — thus, all assignments to local variables go into this new
 namespace.  In particular, function definitions bind the name of the new
 function here.</p>
 <p>When a class definition is left normally (via the end), a <em>class object</em> is
 created.  This is basically a wrapper around the contents of the namespace
-created by the class definition; weâll learn more about class objects in the
+created by the class definition; we’ll learn more about class objects in the
 next section.  The original local scope (the one in effect just before the class
 definition was entered) is reinstated, and the class object is bound here to the
 class name given in the class definition header (<code class="xref py py-class docutils literal notranslate"><span class="pre">ClassName</span></code> in the
 example).</p>
 </section>
 <section id="class-objects">
-<span id="tut-classobjects"></span><h3><span class="section-number">9.3.2. </span>Class Objects<a class="headerlink" href="#class-objects" title="Link to this heading">Â¶</a></h3>
+<span id="tut-classobjects"></span><h3><span class="section-number">9.3.2. </span>Class Objects<a class="headerlink" href="#class-objects" title="Link to this heading">¶</a></h3>
 <p>Class objects support two kinds of operations: attribute references and
 instantiation.</p>
 <p><em>Attribute references</em> use the standard syntax used for all attribute references
 in Python: <code class="docutils literal notranslate"><span class="pre">obj.name</span></code>.  Valid attribute names are all the names that were in
-the classâs namespace when the class object was created.  So, if the class
+the class’s namespace when the class object was created.  So, if the class
 definition looked like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple example class&quot;&quot;&quot;</span>
@@ -470,7 +470,7 @@ For example (assuming the above class):</p>
 </div>
 <p>creates a new <em>instance</em> of the class and assigns this object to the local
 variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<p>The instantiation operation (âcallingâ a class object) creates an empty object.
+<p>The instantiation operation (“calling” a class object) creates an empty object.
 Many classes like to create objects with instances customized to a specific
 initial state. Therefore a class may define a special method named
 <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>, like this:</p>
@@ -499,12 +499,12 @@ are passed on to <code class="xref py py-meth docutils literal notranslate"><spa
 </div>
 </section>
 <section id="instance-objects">
-<span id="tut-instanceobjects"></span><h3><span class="section-number">9.3.3. </span>Instance Objects<a class="headerlink" href="#instance-objects" title="Link to this heading">Â¶</a></h3>
+<span id="tut-instanceobjects"></span><h3><span class="section-number">9.3.3. </span>Instance Objects<a class="headerlink" href="#instance-objects" title="Link to this heading">¶</a></h3>
 <p>Now what can we do with instance objects?  The only operations understood by
 instance objects are attribute references.  There are two kinds of valid
 attribute names: data attributes and methods.</p>
-<p><em>Data attributes</em> correspond to âinstance variablesâ in Smalltalk, and to âdata
-membersâ in C++.  Data attributes need not be declared; like local variables,
+<p><em>Data attributes</em> correspond to “instance variables” in Smalltalk, and to “data
+members” in C++.  Data attributes need not be declared; like local variables,
 they spring into existence when they are first assigned to.  For example, if
 <code class="docutils literal notranslate"><span class="pre">x</span></code> is the instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">MyClass</span></code> created above, the following piece of
 code will print the value <code class="docutils literal notranslate"><span class="pre">16</span></code>, without leaving a trace:</p>
@@ -516,16 +516,16 @@ code will print the value <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <p>The other kind of instance attribute reference is a <em>method</em>. A method is a
-function that âbelongs toâ an object.</p>
+function that “belongs to” an object.</p>
 <p id="index-0">Valid method names of an instance object depend on its class.  By definition,
 all attributes of a class that are function  objects define corresponding
 methods of its instances.  So in our example, <code class="docutils literal notranslate"><span class="pre">x.f</span></code> is a valid method
 reference, since <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> is a function, but <code class="docutils literal notranslate"><span class="pre">x.i</span></code> is not, since
-<code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> is not.  But <code class="docutils literal notranslate"><span class="pre">x.f</span></code> is not the same thing as <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> â it
+<code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> is not.  But <code class="docutils literal notranslate"><span class="pre">x.f</span></code> is not the same thing as <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> — it
 is a <em>method object</em>, not a function object.</p>
 </section>
 <section id="method-objects">
-<span id="tut-methodobjects"></span><h3><span class="section-number">9.3.4. </span>Method Objects<a class="headerlink" href="#method-objects" title="Link to this heading">Â¶</a></h3>
+<span id="tut-methodobjects"></span><h3><span class="section-number">9.3.4. </span>Method Objects<a class="headerlink" href="#method-objects" title="Link to this heading">¶</a></h3>
 <p>Usually, a method is called right after it is bound:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
 </pre></div>
@@ -543,15 +543,15 @@ object, and can be stored away and called at a later time.  For example:</p>
 <code class="docutils literal notranslate"><span class="pre">x.f()</span></code> was called without an argument above, even though the function
 definition for <code class="xref py py-meth docutils literal notranslate"><span class="pre">f()</span></code> specified an argument.  What happened to the argument?
 Surely Python raises an exception when a function that requires an argument is
-called without any â even if the argument isnât actually usedâ¦</p>
+called without any — even if the argument isn’t actually used…</p>
 <p>Actually, you may have guessed the answer: the special thing about methods is
 that the instance object is passed as the first argument of the function.  In our
 example, the call <code class="docutils literal notranslate"><span class="pre">x.f()</span></code> is exactly equivalent to <code class="docutils literal notranslate"><span class="pre">MyClass.f(x)</span></code>.  In
 general, calling a method with a list of <em>n</em> arguments is equivalent to calling
 the corresponding function with an argument list that is created by inserting
-the methodâs instance object before the first argument.</p>
+the method’s instance object before the first argument.</p>
 <p>In general, methods work as follows.  When a non-data attribute
-of an instance is referenced, the instanceâs class is searched.
+of an instance is referenced, the instance’s class is searched.
 If the name denotes a valid class attribute that is a function object,
 references to both the instance object and the function object
 are packed into a method object.  When the method object is called
@@ -560,7 +560,7 @@ object and the argument list, and the function object is called with this new
 argument list.</p>
 </section>
 <section id="class-and-instance-variables">
-<span id="tut-class-and-instance-variables"></span><h3><span class="section-number">9.3.5. </span>Class and Instance Variables<a class="headerlink" href="#class-and-instance-variables" title="Link to this heading">Â¶</a></h3>
+<span id="tut-class-and-instance-variables"></span><h3><span class="section-number">9.3.5. </span>Class and Instance Variables<a class="headerlink" href="#class-and-instance-variables" title="Link to this heading">¶</a></h3>
 <p>Generally speaking, instance variables are for data unique to each instance
 and class variables are for attributes and methods shared by all instances
 of the class:</p>
@@ -629,7 +629,7 @@ instances:</p>
 </section>
 </section>
 <section id="random-remarks">
-<span id="tut-remarks"></span><h2><span class="section-number">9.4. </span>Random Remarks<a class="headerlink" href="#random-remarks" title="Link to this heading">Â¶</a></h2>
+<span id="tut-remarks"></span><h2><span class="section-number">9.4. </span>Random Remarks<a class="headerlink" href="#random-remarks" title="Link to this heading">¶</a></h2>
 <p>If the same attribute name occurs in both an instance and in a class,
 then attribute lookup prioritizes the instance:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Warehouse</span><span class="p">:</span>
@@ -646,16 +646,16 @@ then attribute lookup prioritizes the instance:</p>
 </pre></div>
 </div>
 <p>Data attributes may be referenced by methods as well as by ordinary users
-(âclientsâ) of an object.  In other words, classes are not usable to implement
+(“clients”) of an object.  In other words, classes are not usable to implement
 pure abstract data types.  In fact, nothing in Python makes it possible to
-enforce data hiding â it is all based upon convention.  (On the other hand,
+enforce data hiding — it is all based upon convention.  (On the other hand,
 the Python implementation, written in C, can completely hide implementation
 details and control access to an object if necessary; this can be used by
 extensions to Python written in C.)</p>
-<p>Clients should use data attributes with care â clients may mess up invariants
+<p>Clients should use data attributes with care — clients may mess up invariants
 maintained by the methods by stamping on their data attributes.  Note that
 clients may add data attributes of their own to an instance object without
-affecting the validity of the methods, as long as name conflicts are avoided â
+affecting the validity of the methods, as long as name conflicts are avoided —
 again, a naming convention can save a lot of headaches here.</p>
 <p>There is no shorthand for referencing data attributes (or other methods!) from
 within methods.  I find that this actually increases the readability of methods:
@@ -685,7 +685,7 @@ variable in the class is also ok.  For example:</p>
 </div>
 <p>Now <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> are all attributes of class <code class="xref py py-class docutils literal notranslate"><span class="pre">C</span></code> that refer to
 function objects, and consequently they are all methods of instances of
-<code class="xref py py-class docutils literal notranslate"><span class="pre">C</span></code> â <code class="docutils literal notranslate"><span class="pre">h</span></code> being exactly equivalent to <code class="docutils literal notranslate"><span class="pre">g</span></code>.  Note that this practice
+<code class="xref py py-class docutils literal notranslate"><span class="pre">C</span></code> — <code class="docutils literal notranslate"><span class="pre">h</span></code> being exactly equivalent to <code class="docutils literal notranslate"><span class="pre">g</span></code>.  Note that this practice
 usually only serves to confuse the reader of a program.</p>
 <p>Methods may call other methods by using method attributes of the <code class="docutils literal notranslate"><span class="pre">self</span></code>
 argument:</p>
@@ -708,14 +708,14 @@ rarely encounters a good reason for using global data in a method, there are
 many legitimate uses of the global scope: for one thing, functions and modules
 imported into the global scope can be used by methods, as well as functions and
 classes defined in it.  Usually, the class containing the method is itself
-defined in this global scope, and in the next section weâll find some good
+defined in this global scope, and in the next section we’ll find some good
 reasons why a method would want to reference its own class.</p>
 <p>Each value is an object, and therefore has a <em>class</em> (also called its <em>type</em>).
 It is stored as <code class="docutils literal notranslate"><span class="pre">object.__class__</span></code>.</p>
 </section>
 <section id="inheritance">
-<span id="tut-inheritance"></span><h2><span class="section-number">9.5. </span>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">Â¶</a></h2>
-<p>Of course, a language feature would not be worthy of the name âclassâ without
+<span id="tut-inheritance"></span><h2><span class="section-number">9.5. </span>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">¶</a></h2>
+<p>Of course, a language feature would not be worthy of the name “class” without
 supporting inheritance.  The syntax for a derived class definition looks like
 this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">):</span>
@@ -739,7 +739,7 @@ When the class object is constructed, the base class is remembered.  This is
 used for resolving attribute references: if a requested attribute is not found
 in the class, the search proceeds to look in the base class.  This rule is
 applied recursively if the base class itself is derived from some other class.</p>
-<p>Thereâs nothing special about instantiation of derived classes:
+<p>There’s nothing special about instantiation of derived classes:
 <code class="docutils literal notranslate"><span class="pre">DerivedClassName()</span></code> creates a new instance of the class.  Method references
 are resolved as follows: the corresponding class attribute is searched,
 descending down the chain of base classes if necessary, and the method reference
@@ -757,7 +757,7 @@ only works if the base class is accessible as <code class="docutils literal notr
 scope.)</p>
 <p>Python has two built-in functions that work with inheritance:</p>
 <ul class="simple">
-<li><p>Use <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> to check an instanceâs type: <code class="docutils literal notranslate"><span class="pre">isinstance(obj,</span> <span class="pre">int)</span></code>
+<li><p>Use <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> to check an instance’s type: <code class="docutils literal notranslate"><span class="pre">isinstance(obj,</span> <span class="pre">int)</span></code>
 will be <code class="docutils literal notranslate"><span class="pre">True</span></code> only if <code class="docutils literal notranslate"><span class="pre">obj.__class__</span></code> is <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> or some class
 derived from <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
 <li><p>Use <a class="reference internal" href="../library/functions.html#issubclass" title="issubclass"><code class="xref py py-func docutils literal notranslate"><span class="pre">issubclass()</span></code></a> to check class inheritance: <code class="docutils literal notranslate"><span class="pre">issubclass(bool,</span> <span class="pre">int)</span></code>
@@ -766,7 +766,7 @@ is <code class="docutils literal notranslate"><span class="pre">True</span></cod
 subclass of <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
 </ul>
 <section id="multiple-inheritance">
-<span id="tut-multiple"></span><h3><span class="section-number">9.5.1. </span>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Link to this heading">Â¶</a></h3>
+<span id="tut-multiple"></span><h3><span class="section-number">9.5.1. </span>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Link to this heading">¶</a></h3>
 <p>Python supports a form of multiple inheritance as well.  A class definition with
 multiple base classes looks like this:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">Base1</span><span class="p">,</span> <span class="n">Base2</span><span class="p">,</span> <span class="n">Base3</span><span class="p">):</span>
@@ -803,9 +803,9 @@ extensible classes with multiple inheritance.  For more detail, see
 </section>
 </section>
 <section id="private-variables">
-<span id="tut-private"></span><h2><span class="section-number">9.6. </span>Private Variables<a class="headerlink" href="#private-variables" title="Link to this heading">Â¶</a></h2>
-<p>âPrivateâ instance variables that cannot be accessed except from inside an
-object donât exist in Python.  However, there is a convention that is followed
+<span id="tut-private"></span><h2><span class="section-number">9.6. </span>Private Variables<a class="headerlink" href="#private-variables" title="Link to this heading">¶</a></h2>
+<p>“Private” instance variables that cannot be accessed except from inside an
+object don’t exist in Python.  However, there is a convention that is followed
 by most Python code: a name prefixed with an underscore (e.g. <code class="docutils literal notranslate"><span class="pre">_spam</span></code>) should
 be treated as a non-public part of the API (whether it is a function, a method
 or a data member).  It should be considered an implementation detail and subject
@@ -860,9 +860,9 @@ to code that is byte-compiled together.  The same restriction applies to
 <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> directly.</p>
 </section>
 <section id="odds-and-ends">
-<span id="tut-odds"></span><h2><span class="section-number">9.7. </span>Odds and Ends<a class="headerlink" href="#odds-and-ends" title="Link to this heading">Â¶</a></h2>
-<p>Sometimes it is useful to have a data type similar to the Pascal ârecordâ or C
-âstructâ, bundling together a few named data items. The idiomatic approach
+<span id="tut-odds"></span><h2><span class="section-number">9.7. </span>Odds and Ends<a class="headerlink" href="#odds-and-ends" title="Link to this heading">¶</a></h2>
+<p>Sometimes it is useful to have a data type similar to the Pascal “record” or C
+“struct”, bundling together a few named data items. The idiomatic approach
 is to use <a class="reference internal" href="../library/dataclasses.html#module-dataclasses" title="dataclasses: Generate special methods on user-defined classes."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code></a> for this purpose:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
@@ -893,7 +893,7 @@ the <a class="reference internal" href="../reference/datamodel.html#user-defined
 corresponding to the method.</p>
 </section>
 <section id="iterators">
-<span id="tut-iterators"></span><h2><span class="section-number">9.8. </span>Iterators<a class="headerlink" href="#iterators" title="Link to this heading">Â¶</a></h2>
+<span id="tut-iterators"></span><h2><span class="section-number">9.8. </span>Iterators<a class="headerlink" href="#iterators" title="Link to this heading">¶</a></h2>
 <p>By now you have probably noticed that most container objects can be looped over
 using a <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> statement:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
@@ -967,7 +967,7 @@ defines <code class="xref py py-meth docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="generators">
-<span id="tut-generators"></span><h2><span class="section-number">9.9. </span>Generators<a class="headerlink" href="#generators" title="Link to this heading">Â¶</a></h2>
+<span id="tut-generators"></span><h2><span class="section-number">9.9. </span>Generators<a class="headerlink" href="#generators" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="../glossary.html#term-generator"><span class="xref std std-term">Generators</span></a> are a simple and powerful tool for creating iterators.  They
 are written like regular functions but use the <a class="reference internal" href="../reference/simple_stmts.html#yield"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code></a> statement
 whenever they want to return data.  Each time <a class="reference internal" href="../library/functions.html#next" title="next"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> is called on it, the
@@ -1002,7 +1002,7 @@ combination, these features make it easy to create iterators with no more effort
 than writing a regular function.</p>
 </section>
 <section id="generator-expressions">
-<span id="tut-genexps"></span><h2><span class="section-number">9.10. </span>Generator Expressions<a class="headerlink" href="#generator-expressions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-genexps"></span><h2><span class="section-number">9.10. </span>Generator Expressions<a class="headerlink" href="#generator-expressions" title="Link to this heading">¶</a></h2>
 <p>Some simple generators can be coded succinctly as expressions using a syntax
 similar to list comprehensions but with parentheses instead of square brackets.
 These expressions are designed for situations where the generator is used right
@@ -1032,7 +1032,7 @@ than equivalent list comprehensions.</p>
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Except for one thing.  Module objects have a secret read-only attribute called
-<a class="reference internal" href="../reference/datamodel.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a> which returns the dictionary used to implement the moduleâs
+<a class="reference internal" href="../reference/datamodel.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a> which returns the dictionary used to implement the module’s
 namespace; the name <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> is an attribute but not a global name.
 Obviously, using this violates the abstraction of namespace implementation, and
 should be restricted to things like post-mortem debuggers.</p>
@@ -1119,7 +1119,7 @@ should be restricted to things like post-mortem debuggers.</p>
   </div>
         </div>
 <div id="sidebarbutton" title="Collapse sidebar">
-<span>Â«</span>
+<span>«</span>
 </div>
 
       </div>

@@ -8,12 +8,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/tutorial/datastructures.html" />
 <meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="This chapter describes some things youâve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
+<meta property="og:description" content="This chapter describes some things you’ve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
 <meta property="og:image" content="https://docs.python.org/3.14/_images/social_previews/summary_tutorial_datastructures_5322edaa.png" />
-<meta property="og:image:alt" content="This chapter describes some things youâve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
-<meta name="description" content="This chapter describes some things youâve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
+<meta property="og:image:alt" content="This chapter describes some things you’ve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
+<meta name="description" content="This chapter describes some things you’ve learned about already in more detail, and adds some new things as well. More on Lists: The list data type has some more methods. Here are all of the method..." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#3776ab">
 
@@ -225,11 +225,11 @@
           <div class="body" role="main">
             
   <section id="data-structures">
-<span id="tut-structures"></span><h1><span class="section-number">5. </span>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">Â¶</a></h1>
-<p>This chapter describes some things youâve learned about already in more detail,
+<span id="tut-structures"></span><h1><span class="section-number">5. </span>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">¶</a></h1>
+<p>This chapter describes some things you’ve learned about already in more detail,
 and adds some new things as well.</p>
 <section id="more-on-lists">
-<span id="tut-morelists"></span><h2><span class="section-number">5.1. </span>More on Lists<a class="headerlink" href="#more-on-lists" title="Link to this heading">Â¶</a></h2>
+<span id="tut-morelists"></span><h2><span class="section-number">5.1. </span>More on Lists<a class="headerlink" href="#more-on-lists" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../library/stdtypes.html#typesseq-list"><span class="std std-ref">list</span></a> data type has some more methods. Here are all
 of the methods of list objects:</p>
 <dl class="py method">
@@ -335,19 +335,19 @@ customization, see <a class="reference internal" href="../library/functions.html
 </pre></div>
 </div>
 <p>You might have noticed that methods like <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code> or <code class="docutils literal notranslate"><span class="pre">sort</span></code> that
-only modify the list have no return value printed â they return the default
+only modify the list have no return value printed – they return the default
 <code class="docutils literal notranslate"><span class="pre">None</span></code>. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>  This is a design principle for all mutable data structures in
 Python.</p>
 <p>Another thing you might notice is that not all data can be sorted or
-compared.  For instance, <code class="docutils literal notranslate"><span class="pre">[None,</span> <span class="pre">'hello',</span> <span class="pre">10]</span></code> doesnât sort because
-integers canât be compared to strings and <code class="docutils literal notranslate"><span class="pre">None</span></code> canât be compared to
-other types.  Also, there are some types that donât have a defined
-ordering relation.  For example, <code class="docutils literal notranslate"><span class="pre">3+4j</span> <span class="pre">&lt;</span> <span class="pre">5+7j</span></code> isnât a valid
+compared.  For instance, <code class="docutils literal notranslate"><span class="pre">[None,</span> <span class="pre">'hello',</span> <span class="pre">10]</span></code> doesn’t sort because
+integers can’t be compared to strings and <code class="docutils literal notranslate"><span class="pre">None</span></code> can’t be compared to
+other types.  Also, there are some types that don’t have a defined
+ordering relation.  For example, <code class="docutils literal notranslate"><span class="pre">3+4j</span> <span class="pre">&lt;</span> <span class="pre">5+7j</span></code> isn’t a valid
 comparison.</p>
 <section id="using-lists-as-stacks">
-<span id="tut-lists-as-stacks"></span><h3><span class="section-number">5.1.1. </span>Using Lists as Stacks<a class="headerlink" href="#using-lists-as-stacks" title="Link to this heading">Â¶</a></h3>
+<span id="tut-lists-as-stacks"></span><h3><span class="section-number">5.1.1. </span>Using Lists as Stacks<a class="headerlink" href="#using-lists-as-stacks" title="Link to this heading">¶</a></h3>
 <p>The list methods make it very easy to use a list as a stack, where the last
-element added is the first element retrieved (âlast-in, first-outâ).  To add an
+element added is the first element retrieved (“last-in, first-out”).  To add an
 item to the top of the stack, use <a class="reference internal" href="../library/stdtypes.html#list.append" title="list.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code></a>.  To retrieve an item from the
 top of the stack, use <a class="reference internal" href="../library/stdtypes.html#list.pop" title="list.pop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pop()</span></code></a> without an explicit index.  For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -369,9 +369,9 @@ top of the stack, use <a class="reference internal" href="../library/stdtypes.ht
 </div>
 </section>
 <section id="using-lists-as-queues">
-<span id="tut-lists-as-queues"></span><h3><span class="section-number">5.1.2. </span>Using Lists as Queues<a class="headerlink" href="#using-lists-as-queues" title="Link to this heading">Â¶</a></h3>
+<span id="tut-lists-as-queues"></span><h3><span class="section-number">5.1.2. </span>Using Lists as Queues<a class="headerlink" href="#using-lists-as-queues" title="Link to this heading">¶</a></h3>
 <p>It is also possible to use a list as a queue, where the first element added is
-the first element retrieved (âfirst-in, first-outâ); however, lists are not
+the first element retrieved (“first-in, first-out”); however, lists are not
 efficient for this purpose.  While appends and pops from the end of list are
 fast, doing inserts or pops from the beginning of a list is slow (because all
 of the other elements have to be shifted by one).</p>
@@ -391,7 +391,7 @@ have fast appends and pops from both ends.  For example:</p>
 </div>
 </section>
 <section id="list-comprehensions">
-<span id="tut-listcomps"></span><h3><span class="section-number">5.1.3. </span>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">Â¶</a></h3>
+<span id="tut-listcomps"></span><h3><span class="section-number">5.1.3. </span>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">¶</a></h3>
 <p>List comprehensions provide a concise way to create lists.
 Common applications are to make new lists where each element is the result of
 some operations applied to each member of another sequence or iterable, or to
@@ -426,7 +426,7 @@ equal:</p>
 <span class="go">[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</span>
 </pre></div>
 </div>
-<p>and itâs equivalent to:</p>
+<p>and it’s equivalent to:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">combs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
@@ -478,7 +478,7 @@ it must be parenthesized.</p>
 </div>
 </section>
 <section id="nested-list-comprehensions">
-<h3><span class="section-number">5.1.4. </span>Nested List Comprehensions<a class="headerlink" href="#nested-list-comprehensions" title="Link to this heading">Â¶</a></h3>
+<h3><span class="section-number">5.1.4. </span>Nested List Comprehensions<a class="headerlink" href="#nested-list-comprehensions" title="Link to this heading">¶</a></h3>
 <p>The initial expression in a list comprehension can be any arbitrary expression,
 including another list comprehension.</p>
 <p>Consider the following example of a 3x4 matrix implemented as a list of
@@ -529,7 +529,7 @@ The <a class="reference internal" href="../library/functions.html#zip" title="zi
 </section>
 </section>
 <section id="the-del-statement">
-<span id="tut-del"></span><h2><span class="section-number">5.2. </span>The <code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code> statement<a class="headerlink" href="#the-del-statement" title="Link to this heading">Â¶</a></h2>
+<span id="tut-del"></span><h2><span class="section-number">5.2. </span>The <code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code> statement<a class="headerlink" href="#the-del-statement" title="Link to this heading">¶</a></h2>
 <p>There is a way to remove an item from a list given its index instead of its
 value: the <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> statement.  This differs from the <a class="reference internal" href="../library/stdtypes.html#list.pop" title="list.pop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pop()</span></code></a> method
 which returns a value.  The <code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code> statement can also be used to remove
@@ -552,13 +552,13 @@ of an empty list to the slice).  For example:</p>
 </pre></div>
 </div>
 <p>Referencing the name <code class="docutils literal notranslate"><span class="pre">a</span></code> hereafter is an error (at least until another value
-is assigned to it).  Weâll find other uses for <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> later.</p>
+is assigned to it).  We’ll find other uses for <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> later.</p>
 </section>
 <section id="tuples-and-sequences">
-<span id="tut-tuples"></span><h2><span class="section-number">5.3. </span>Tuples and Sequences<a class="headerlink" href="#tuples-and-sequences" title="Link to this heading">Â¶</a></h2>
+<span id="tut-tuples"></span><h2><span class="section-number">5.3. </span>Tuples and Sequences<a class="headerlink" href="#tuples-and-sequences" title="Link to this heading">¶</a></h2>
 <p>We saw that lists and strings have many common properties, such as indexing and
 slicing operations.  They are two examples of <em>sequence</em> data types (see
-<a class="reference internal" href="../library/stdtypes.html#typesseq"><span class="std std-ref">Sequence Types â list, tuple, range</span></a>).  Since Python is an evolving language, other sequence data
+<a class="reference internal" href="../library/stdtypes.html#typesseq"><span class="std std-ref">Sequence Types — list, tuple, range</span></a>).  Since Python is an evolving language, other sequence data
 types may be added.  There is also another standard sequence data type: the
 <em>tuple</em>.</p>
 <p>A tuple consists of a number of values separated by commas, for instance:</p>
@@ -623,7 +623,7 @@ sequence.  Note that multiple assignment is really just a combination of tuple
 packing and sequence unpacking.</p>
 </section>
 <section id="sets">
-<span id="tut-sets"></span><h2><span class="section-number">5.4. </span>Sets<a class="headerlink" href="#sets" title="Link to this heading">Â¶</a></h2>
+<span id="tut-sets"></span><h2><span class="section-number">5.4. </span>Sets<a class="headerlink" href="#sets" title="Link to this heading">¶</a></h2>
 <p>Python also includes a data type for <a class="reference internal" href="../library/stdtypes.html#types-set"><span class="std std-ref">sets</span></a>.  A set is
 an unordered collection with no duplicate elements.  Basic uses include
 membership testing and eliminating duplicate entries.  Set objects also
@@ -668,15 +668,15 @@ are also supported:</p>
 </div>
 </section>
 <section id="dictionaries">
-<span id="tut-dictionaries"></span><h2><span class="section-number">5.5. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">Â¶</a></h2>
+<span id="tut-dictionaries"></span><h2><span class="section-number">5.5. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">¶</a></h2>
 <p>Another useful data type built into Python is the <em>dictionary</em> (see
-<a class="reference internal" href="../library/stdtypes.html#typesmapping"><span class="std std-ref">Mapping Types â dict</span></a>). Dictionaries are sometimes found in other languages as
-âassociative memoriesâ or âassociative arraysâ.  Unlike sequences, which are
+<a class="reference internal" href="../library/stdtypes.html#typesmapping"><span class="std std-ref">Mapping Types — dict</span></a>). Dictionaries are sometimes found in other languages as
+“associative memories” or “associative arrays”.  Unlike sequences, which are
 indexed by a range of numbers, dictionaries are indexed by <em>keys</em>, which can be
 any immutable type; strings and numbers can always be keys.  Tuples can be used
 as keys if they contain only strings, numbers, or tuples; if a tuple contains
 any mutable object either directly or indirectly, it cannot be used as a key.
-You canât use lists as keys, since lists can be modified in place using index
+You can’t use lists as keys, since lists can be modified in place using index
 assignments, slice assignments, or methods like <a class="reference internal" href="../library/stdtypes.html#list.append" title="list.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code></a> and
 <a class="reference internal" href="../library/stdtypes.html#list.extend" title="list.extend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extend()</span></code></a>.</p>
 <p>It is best to think of a dictionary as a set of <em>key: value</em> pairs,
@@ -743,7 +743,7 @@ keyword arguments:</p>
 </div>
 </section>
 <section id="looping-techniques">
-<span id="tut-loopidioms"></span><h2><span class="section-number">5.6. </span>Looping Techniques<a class="headerlink" href="#looping-techniques" title="Link to this heading">Â¶</a></h2>
+<span id="tut-loopidioms"></span><h2><span class="section-number">5.6. </span>Looping Techniques<a class="headerlink" href="#looping-techniques" title="Link to this heading">¶</a></h2>
 <p>When looping through dictionaries, the key and corresponding value can be
 retrieved at the same time using the <a class="reference internal" href="../library/stdtypes.html#dict.items" title="dict.items"><code class="xref py py-meth docutils literal notranslate"><span class="pre">items()</span></code></a> method.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s1">&#39;the pure&#39;</span><span class="p">,</span> <span class="s1">&#39;robin&#39;</span><span class="p">:</span> <span class="s1">&#39;the brave&#39;</span><span class="p">}</span>
@@ -830,7 +830,7 @@ however, it is often simpler and safer to create a new list instead.</p>
 </div>
 </section>
 <section id="more-on-conditions">
-<span id="tut-conditions"></span><h2><span class="section-number">5.7. </span>More on Conditions<a class="headerlink" href="#more-on-conditions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-conditions"></span><h2><span class="section-number">5.7. </span>More on Conditions<a class="headerlink" href="#more-on-conditions" title="Link to this heading">¶</a></h2>
 <p>The conditions used in <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code> statements can contain any
 operators, not just comparisons.</p>
 <p>The comparison operators <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> are membership tests that
@@ -867,7 +867,7 @@ This avoids a common class of problems encountered in C programs: typing <code c
 in an expression when <code class="docutils literal notranslate"><span class="pre">==</span></code> was intended.</p>
 </section>
 <section id="comparing-sequences-and-other-types">
-<span id="tut-comparing"></span><h2><span class="section-number">5.8. </span>Comparing Sequences and Other Types<a class="headerlink" href="#comparing-sequences-and-other-types" title="Link to this heading">Â¶</a></h2>
+<span id="tut-comparing"></span><h2><span class="section-number">5.8. </span>Comparing Sequences and Other Types<a class="headerlink" href="#comparing-sequences-and-other-types" title="Link to this heading">¶</a></h2>
 <p>Sequence objects typically may be compared to other objects with the same sequence
 type. The comparison uses <em>lexicographical</em> ordering: first the first two
 items are compared, and if they differ this determines the outcome of the
@@ -973,7 +973,7 @@ chaining, such as <code class="docutils literal notranslate"><span class="pre">d
   </div>
         </div>
 <div id="sidebarbutton" title="Collapse sidebar">
-<span>Â«</span>
+<span>«</span>
 </div>
 
       </div>

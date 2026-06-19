@@ -8,12 +8,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/tutorial/errors.html" />
 <meta property="og:site_name" content="Python documentation" />
-<meta property="og:description" content="Until now error messages havenât been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
+<meta property="og:description" content="Until now error messages haven’t been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
 <meta property="og:image" content="https://docs.python.org/3.14/_images/social_previews/summary_tutorial_errors_8039602e.png" />
-<meta property="og:image:alt" content="Until now error messages havenât been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
-<meta name="description" content="Until now error messages havenât been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
+<meta property="og:image:alt" content="Until now error messages haven’t been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
+<meta name="description" content="Until now error messages haven’t been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax error..." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#3776ab">
 
@@ -221,12 +221,12 @@
           <div class="body" role="main">
             
   <section id="errors-and-exceptions">
-<span id="tut-errors"></span><h1><span class="section-number">8. </span>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Link to this heading">Â¶</a></h1>
-<p>Until now error messages havenât been more than mentioned, but if you have tried
+<span id="tut-errors"></span><h1><span class="section-number">8. </span>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Link to this heading">¶</a></h1>
+<p>Until now error messages haven’t been more than mentioned, but if you have tried
 out the examples you have probably seen some.  There are (at least) two
 distinguishable kinds of errors: <em>syntax errors</em> and <em>exceptions</em>.</p>
 <section id="syntax-errors">
-<span id="tut-syntaxerrors"></span><h2><span class="section-number">8.1. </span>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Link to this heading">Â¶</a></h2>
+<span id="tut-syntaxerrors"></span><h2><span class="section-number">8.1. </span>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Link to this heading">¶</a></h2>
 <p>Syntax errors, also known as parsing errors, are perhaps the most common kind of
 complaint you get while you are still learning Python:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
@@ -244,7 +244,7 @@ function <a class="reference internal" href="../library/functions.html#print" ti
 know where to look in case the input came from a file.</p>
 </section>
 <section id="exceptions">
-<span id="tut-exceptions"></span><h2><span class="section-number">8.2. </span>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-exceptions"></span><h2><span class="section-number">8.2. </span>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h2>
 <p>Even if a statement or expression is syntactically correct, it may cause an
 error when an attempt is made to execute it. Errors detected during execution
 are called <em>exceptions</em> and are not unconditionally fatal: you will soon learn
@@ -286,7 +286,7 @@ standard input.</p>
 <p><a class="reference internal" href="../library/exceptions.html#bltin-exceptions"><span class="std std-ref">Built-in Exceptions</span></a> lists the built-in exceptions and their meanings.</p>
 </section>
 <section id="handling-exceptions">
-<span id="tut-handling"></span><h2><span class="section-number">8.3. </span>Handling Exceptions<a class="headerlink" href="#handling-exceptions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-handling"></span><h2><span class="section-number">8.3. </span>Handling Exceptions<a class="headerlink" href="#handling-exceptions" title="Link to this heading">¶</a></h2>
 <p>It is possible to write programs that handle selected exceptions. Look at the
 following example, which asks the user for input until a valid integer has been
 entered, but allows the user to interrupt the program (using <kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd> or
@@ -325,7 +325,7 @@ may name multiple exceptions, for example:</p>
 </pre></div>
 </div>
 <p>A class in an <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> clause matches exceptions which are instances of the
-class itself or one of its derived classes (but not the other way around â an
+class itself or one of its derived classes (but not the other way around — an
 <em>except clause</em> listing a derived class does not match instances of its base classes).
 For example, the following code will print B, C, D in that order:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -349,9 +349,9 @@ For example, the following code will print B, C, D in that order:</p>
 </pre></div>
 </div>
 <p>Note that if the <em>except clauses</em> were reversed (with <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">B</span></code> first), it
-would have printed B, B, B â the first matching <em>except clause</em> is triggered.</p>
+would have printed B, B, B — the first matching <em>except clause</em> is triggered.</p>
 <p>When an exception occurs, it may have associated values, also known as the
-exceptionâs <em>arguments</em>. The presence and types of the arguments depend on the
+exception’s <em>arguments</em>. The presence and types of the arguments depend on the
 exception type.</p>
 <p>The <em>except clause</em> may specify a variable after the exception name.  The
 variable is bound to the exception instance which typically has an <code class="docutils literal notranslate"><span class="pre">args</span></code>
@@ -376,7 +376,7 @@ accessing <code class="docutils literal notranslate"><span class="pre">.args</sp
 <span class="go">y = eggs</span>
 </pre></div>
 </div>
-<p>The exceptionâs <a class="reference internal" href="../reference/datamodel.html#object.__str__" title="object.__str__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__str__()</span></code></a> output is printed as the last part (âdetailâ)
+<p>The exception’s <a class="reference internal" href="../reference/datamodel.html#object.__str__" title="object.__str__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__str__()</span></code></a> output is printed as the last part (‘detail’)
 of the message for unhandled exceptions.</p>
 <p><a class="reference internal" href="../library/exceptions.html#BaseException" title="BaseException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BaseException</span></code></a> is the common base class of all exceptions. One of its
 subclasses, <a class="reference internal" href="../library/exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a>, is the base class of all the non-fatal exceptions.
@@ -407,7 +407,7 @@ exception as well):</p>
     <span class="k">raise</span>
 </pre></div>
 </div>
-<p>The <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> â¦ <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> statement has an optional <em>else
+<p>The <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> … <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> statement has an optional <em>else
 clause</em>, which, when present, must follow all <em>except clauses</em>.  It is useful
 for code that must be executed if the <em>try clause</em> does not raise an exception.
 For example:</p>
@@ -423,7 +423,7 @@ For example:</p>
 </div>
 <p>The use of the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> clause is better than adding additional code to
 the <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> clause because it avoids accidentally catching an exception
-that wasnât raised by the code being protected by the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code> â¦
+that wasn’t raised by the code being protected by the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code> …
 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code> statement.</p>
 <p>Exception handlers do not handle only exceptions that occur immediately in the
 <em>try clause</em>, but also those that occur inside functions that are called (even
@@ -441,7 +441,7 @@ indirectly) in the <em>try clause</em>. For example:</p>
 </div>
 </section>
 <section id="raising-exceptions">
-<span id="tut-raising"></span><h2><span class="section-number">8.4. </span>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-raising"></span><h2><span class="section-number">8.4. </span>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../reference/simple_stmts.html#raise"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">raise</span></code></a> statement allows the programmer to force a specified
 exception to occur. For example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s1">&#39;HiThere&#39;</span><span class="p">)</span>
@@ -459,7 +459,7 @@ instantiated by calling its constructor with no arguments:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">ValueError</span>  <span class="c1"># shorthand for &#39;raise ValueError()&#39;</span>
 </pre></div>
 </div>
-<p>If you need to determine whether an exception was raised but donât intend to
+<p>If you need to determine whether an exception was raised but don’t intend to
 handle it, a simpler form of the <a class="reference internal" href="../reference/simple_stmts.html#raise"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">raise</span></code></a> statement allows you to
 re-raise the exception:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
@@ -477,7 +477,7 @@ re-raise the exception:</p>
 </div>
 </section>
 <section id="exception-chaining">
-<span id="tut-exception-chaining"></span><h2><span class="section-number">8.5. </span>Exception Chaining<a class="headerlink" href="#exception-chaining" title="Link to this heading">Â¶</a></h2>
+<span id="tut-exception-chaining"></span><h2><span class="section-number">8.5. </span>Exception Chaining<a class="headerlink" href="#exception-chaining" title="Link to this heading">¶</a></h2>
 <p>If an unhandled exception occurs inside an <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> section, it will
 have the exception being handled attached to it and included in the error
 message:</p>
@@ -546,20 +546,20 @@ idiom:</p>
 <p>For more information about chaining mechanics, see <a class="reference internal" href="../library/exceptions.html#bltin-exceptions"><span class="std std-ref">Built-in Exceptions</span></a>.</p>
 </section>
 <section id="user-defined-exceptions">
-<span id="tut-userexceptions"></span><h2><span class="section-number">8.6. </span>User-defined Exceptions<a class="headerlink" href="#user-defined-exceptions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-userexceptions"></span><h2><span class="section-number">8.6. </span>User-defined Exceptions<a class="headerlink" href="#user-defined-exceptions" title="Link to this heading">¶</a></h2>
 <p>Programs may name their own exceptions by creating a new exception class (see
 <a class="reference internal" href="classes.html#tut-classes"><span class="std std-ref">Classes</span></a> for more about Python classes).  Exceptions should typically
 be derived from the <a class="reference internal" href="../library/exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> class, either directly or indirectly.</p>
 <p>Exception classes can be defined which do anything any other class can do, but
 are usually kept simple, often only offering a number of attributes that allow
 information about the error to be extracted by handlers for the exception.</p>
-<p>Most exceptions are defined with names that end in âErrorâ, similar to the
+<p>Most exceptions are defined with names that end in “Error”, similar to the
 naming of the standard exceptions.</p>
 <p>Many standard modules define their own exceptions to report errors that may
 occur in functions they define.</p>
 </section>
 <section id="defining-clean-up-actions">
-<span id="tut-cleanup"></span><h2><span class="section-number">8.7. </span>Defining Clean-up Actions<a class="headerlink" href="#defining-clean-up-actions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-cleanup"></span><h2><span class="section-number">8.7. </span>Defining Clean-up Actions<a class="headerlink" href="#defining-clean-up-actions" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> statement has another optional clause which is intended to
 define clean-up actions that must be executed under all circumstances.  For
 example:</p>
@@ -598,11 +598,11 @@ version 3.14 the compiler emits a <a class="reference internal" href="../library
 <a class="reference internal" href="../reference/simple_stmts.html#continue"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code></a> or <a class="reference internal" href="../reference/simple_stmts.html#return"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code></a> statement, the
 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> clause will execute just prior to the
 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code>, <code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code> or <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code>
-statementâs execution.</p></li>
+statement’s execution.</p></li>
 <li><p>If a <code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> clause includes a <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code>
 statement, the returned value will be the one from the
-<code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> clauseâs <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code> statement, not the
-value from the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code> clauseâs <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code>
+<code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code> clause’s <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code> statement, not the
+value from the <code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code> clause’s <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code>
 statement. This can be confusing and is therefore discouraged. From
 version 3.14 the compiler emits a <a class="reference internal" href="../library/exceptions.html#SyntaxWarning" title="SyntaxWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">SyntaxWarning</span></code></a> for it
 (see <span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-0765/"><strong>PEP 765</strong></a>).</p></li>
@@ -656,7 +656,7 @@ releasing external resources (such as files or network connections), regardless
 of whether the use of the resource was successful.</p>
 </section>
 <section id="predefined-clean-up-actions">
-<span id="tut-cleanup-with"></span><h2><span class="section-number">8.8. </span>Predefined Clean-up Actions<a class="headerlink" href="#predefined-clean-up-actions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-cleanup-with"></span><h2><span class="section-number">8.8. </span>Predefined Clean-up Actions<a class="headerlink" href="#predefined-clean-up-actions" title="Link to this heading">¶</a></h2>
 <p>Some objects define standard clean-up actions to be undertaken when the object
 is no longer needed, regardless of whether or not the operation using the object
 succeeded or failed. Look at the following example, which tries to open a file
@@ -680,7 +680,7 @@ problem was encountered while processing the lines. Objects which, like files,
 provide predefined clean-up actions will indicate this in their documentation.</p>
 </section>
 <section id="raising-and-handling-multiple-unrelated-exceptions">
-<span id="tut-exception-groups"></span><h2><span class="section-number">8.9. </span>Raising and Handling Multiple Unrelated Exceptions<a class="headerlink" href="#raising-and-handling-multiple-unrelated-exceptions" title="Link to this heading">Â¶</a></h2>
+<span id="tut-exception-groups"></span><h2><span class="section-number">8.9. </span>Raising and Handling Multiple Unrelated Exceptions<a class="headerlink" href="#raising-and-handling-multiple-unrelated-exceptions" title="Link to this heading">¶</a></h2>
 <p>There are situations where it is necessary to report several exceptions that
 have occurred. This is often the case in concurrency frameworks, when several
 tasks may have failed in parallel, but there are also other use cases where
@@ -781,12 +781,12 @@ the following pattern:</p>
 </div>
 </section>
 <section id="enriching-exceptions-with-notes">
-<span id="tut-exception-notes"></span><h2><span class="section-number">8.10. </span>Enriching Exceptions with Notes<a class="headerlink" href="#enriching-exceptions-with-notes" title="Link to this heading">Â¶</a></h2>
+<span id="tut-exception-notes"></span><h2><span class="section-number">8.10. </span>Enriching Exceptions with Notes<a class="headerlink" href="#enriching-exceptions-with-notes" title="Link to this heading">¶</a></h2>
 <p>When an exception is created in order to be raised, it is usually initialized
 with information that describes the error that has occurred. There are cases
 where it is useful to add information after the exception was caught. For this
 purpose, exceptions have a method <code class="docutils literal notranslate"><span class="pre">add_note(note)</span></code> that accepts a string and
-adds it to the exceptionâs notes list. The standard traceback rendering
+adds it to the exception’s notes list. The standard traceback rendering
 includes all notes, in the order they were added, after the exception.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;bad type&#39;</span><span class="p">)</span>
@@ -922,7 +922,7 @@ exception in the group has a note indicating when this error has occurred.</p>
   </div>
         </div>
 <div id="sidebarbutton" title="Collapse sidebar">
-<span>Â«</span>
+<span>«</span>
 </div>
 
       </div>
