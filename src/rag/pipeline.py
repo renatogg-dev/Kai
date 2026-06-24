@@ -1,6 +1,6 @@
 import sys
-from retrieve import retrieve
-from generate import generate
+from src.rag.retrieve import retrieve
+from src.rag.generate import generate
 
 def ask(query: str, k: int = 5, dbms: str | None = None) -> dict:
     hits = retrieve(query, k=k, dbms=dbms)
