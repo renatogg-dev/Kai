@@ -1,0 +1,114 @@
+[
+  {
+    "id": "g01",
+    "categoria": "sqlite",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g02",
+    "categoria": "sqlite",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g03",
+    "categoria": "sqlite",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g04",
+    "categoria": "postgresql",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g05",
+    "categoria": "postgresql",
+    "tipo": "retrieval",
+    "recall_at_k": 0,
+    "reciprocal_rank": 0.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g06",
+    "categoria": "postgresql",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "parcial"
+  },
+  {
+    "id": "g07",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g08",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g09",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g10",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g11",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "parcial"
+  },
+  {
+    "id": "g12",
+    "categoria": "python",
+    "tipo": "retrieval",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g13",
+    "categoria": "python",
+    "tipo": "codigo",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "parcial"
+  },
+  {
+    "id": "g14",
+    "categoria": "sqlite",
+    "tipo": "codigo",
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
+    "faithfulness": "parcial"
+  }
+]

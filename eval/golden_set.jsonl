@@ -1,0 +1,14 @@
+{"id": "g01", "pergunta_pt": "como faço um JOIN no SQLite?", "tipo": "retrieval", "arquivo_esperado": "sqlite_select.html", "categoria": "sqlite"}
+{"id": "g02", "pergunta_pt": "quais funções de agregação existem no SQLite, tipo soma e média?", "tipo": "retrieval", "arquivo_esperado": "sqlite_aggfunc.html", "categoria": "sqlite"}
+{"id": "g03", "pergunta_pt": "como criar uma tabela no SQLite com chave primária?", "tipo": "retrieval", "arquivo_esperado": "sqlite_createtable.html", "categoria": "sqlite"}
+{"id": "g04", "pergunta_pt": "quais tipos de dados numéricos existem no PostgreSQL?", "tipo": "retrieval", "arquivo_esperado": "postgres_datatype.html", "categoria": "postgresql"}
+{"id": "g05", "pergunta_pt": "como funciona a cláusula GROUP BY com funções agregadas no PostgreSQL?", "tipo": "retrieval", "arquivo_esperado": "postgres_aggregate.html", "categoria": "postgresql"}
+{"id": "g06", "pergunta_pt": "como faço um SELECT com ORDER BY no PostgreSQL?", "tipo": "retrieval", "arquivo_esperado": "postgres_select.html", "categoria": "postgresql"}
+{"id": "g07", "pergunta_pt": "como conectar em um banco SQLite usando Python?", "tipo": "retrieval", "arquivo_esperado": "python_sqlite3.html", "categoria": "python"}
+{"id": "g08", "pergunta_pt": "como pego a data e hora atual em Python?", "tipo": "retrieval", "arquivo_esperado": "python_datetime.html", "categoria": "python"}
+{"id": "g09", "pergunta_pt": "como faço uma list comprehension em Python?", "tipo": "retrieval", "arquivo_esperado": "python_datastructures.html", "categoria": "python"}
+{"id": "g10", "pergunta_pt": "como lidar com exceções usando try/except em Python?", "tipo": "retrieval", "arquivo_esperado": "python_errors.html", "categoria": "python"}
+{"id": "g11", "pergunta_pt": "como criar uma classe em Python?", "tipo": "retrieval", "arquivo_esperado": "python_classes.html", "categoria": "python"}
+{"id": "g12", "pergunta_pt": "como funciona o import de módulos em Python?", "tipo": "retrieval", "arquivo_esperado": "python_modules.html", "categoria": "python"}
+{"id": "g13", "pergunta_pt": "escreva uma função Python que recebe uma lista de números e retorna só os números pares", "tipo": "codigo", "arquivo_esperado": "python_datastructures.html", "categoria": "python", "esperado_execucao": "chamar a funcao com [1,2,3,4,5,6] deve retornar [2, 4, 6]"}
+{"id": "g14", "pergunta_pt": "escreva uma query SQL (SQLite) que selecione o nome e a idade de uma tabela pessoas, ordenado por idade decrescente", "tipo": "codigo", "arquivo_esperado": "sqlite_select.html", "categoria": "sqlite", "esperado_execucao": "query deve conter SELECT, FROM pessoas, ORDER BY idade DESC"}

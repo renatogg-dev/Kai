@@ -13,6 +13,18 @@ def load_chunks():
     lines = CHUNKS_PATH.read_text(encoding="utf-8").splitlines()
     return [json.loads(l) for l in lines]
 
+def build_passage_text(chunk: dict) -> str:
+    meta = chunk["metadata"]
+    if meta["linguagem"] == "python":
+        escopo = "Python"
+    elif meta["dbms"] == "sqlite":
+        escopo = "SQLite (SQL)"
+    elif meta["dbms"] == "postgresql":
+        escopo = "PostgreSQL (SQL)"
+    else:
+        escopo = "Documentacao"
+    return f"passage: [{escopo}] {chunk['secao']}: {chunk['text']}"
+
 def main():
     chunks = load_chunks()
     print(f"Carregados {len(chunks)} chunks.")
@@ -33,7 +45,7 @@ def main():
     for start in range(0, total, BATCH_SIZE):
         batch = chunks[start:start + BATCH_SIZE]
 
-        texts_prefixed = [f"passage: {c['text']}" for c in batch]
+        texts_prefixed = [build_passage_text(c) for c in batch]
         embeddings = model.encode(texts_prefixed, show_progress_bar=False).tolist()
 
         collection.add(
