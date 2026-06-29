@@ -16,6 +16,7 @@ SOURCES = {
     "sqlite_select.html": "https://www.sqlite.org/lang_select.html",
     "sqlite_aggfunc.html": "https://www.sqlite.org/lang_aggfunc.html",
     "sqlite_createtable.html": "https://www.sqlite.org/lang_createtable.html",
+    "sqlite_expr.html": "https://www.sqlite.org/lang_expr.html",
     "postgres_select.html": "https://www.postgresql.org/docs/current/sql-select.html",
     "postgres_aggregate.html": "https://www.postgresql.org/docs/current/functions-aggregate.html",
     "postgres_datatype.html": "https://www.postgresql.org/docs/current/datatype.html",

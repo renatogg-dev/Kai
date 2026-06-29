@@ -1,5 +1,5 @@
 import json
-import re
+import re as _re
 from pathlib import Path
 from bs4 import BeautifulSoup
 
@@ -55,7 +55,7 @@ def split_by_headings(main) -> list[tuple[str, str]]:
     return [(t, txt) for t, txt in sections if len(txt) > 40]
 
 def chunk_text(text: str) -> list[str]:
-    text = re.sub(r"\s+", " ", text).strip()
+    text = _re.sub(r"\s+", " ", text).strip()
     if len(text) <= CHUNK_MAX_CHARS:
         return [text]
     chunks = []
@@ -66,10 +66,31 @@ def chunk_text(text: str) -> list[str]:
         start = end - CHUNK_OVERLAP
     return chunks
 
+def is_junk_chunk(text: str) -> bool:
+    """Detecta boilerplate de navegacao e despejos de diagrama de sintaxe/gramatica BNF."""
+    menu_markers = ["Home Menu About Documentation Download License Support Purchase Search"]
+    if any(m in text for m in menu_markers):
+        return True
+
+    diagram_hits = len(_re.findall(r"[\w-]+:\s*(show|hide)", text))
+    if diagram_hits >= 3:
+        return True
+
+    # Heuristica geral: prosa de verdade tem pontuacao de frase. Despejos de
+    # gramatica/diagrama (sqlite e postgres) sao so tokens concatenados, sem
+    # nenhum ponto final numa string longa.
+    if len(text) > 150:
+        pontuacao_final = text.count(".") + text.count("!") + text.count("?")
+        if pontuacao_final == 0:
+            return True
+
+    return False
+
 def main():
     manifest = json.loads((RAW_DIR / "manifest.json").read_text(encoding="utf-8"))
     out_path = CHUNKS_DIR / "chunks.jsonl"
     total = 0
+    seen_texts = set()
 
     with out_path.open("w", encoding="utf-8") as out:
         for filename, url in manifest.items():
@@ -80,6 +101,12 @@ def main():
 
             for sec_idx, (titulo, texto) in enumerate(sections):
                 for chunk_idx, chunk in enumerate(chunk_text(texto)):
+                    if is_junk_chunk(chunk):
+                        continue
+                    if chunk in seen_texts:
+                        continue
+                    seen_texts.add(chunk)
+
                     record = {
                         "id": f"{filename}_{sec_idx:03d}_{chunk_idx:02d}",
                         "source": url,

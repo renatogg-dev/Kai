@@ -1,0 +1,56 @@
+[
+  {
+    "id": "g13",
+    "categoria": "python",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "def filtrar_pares(numeros):\n    \"\"\"Retorna uma lista contendo apenas os números pares da lista de entrada.\"\"\"\n    resultado = []\n    for n in numeros:\n        if n % 2 == 0:\n            resultado.append(n)\n    return resultado",
+    "corrigido": false
+  },
+  {
+    "id": "g14",
+    "categoria": "sqlite",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "SELECT nome, idade\nFROM pessoas\nORDER BY idade DESC;",
+    "corrigido": false
+  },
+  {
+    "id": "g15",
+    "categoria": "python",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "def frequencia_palavras(texto: str) -> dict:\n    \"\"\"Retorna um dicionário com a frequência de cada palavra na string.\"\"\"\n    frequencia = {}\n    palavras = texto.split()\n    for palavra in palavras:\n        palavra = palavra.lower()\n        if palavra in frequencia:\n            frequencia[palavra] = frequencia[palavra] + 1\n        else:\n            frequencia[palavra] = 1\n    return frequencia",
+    "corrigido": false
+  },
+  {
+    "id": "g16",
+    "categoria": "python",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "def fatorial(n):\n    \"\"\"Retorna o fatorial de n recursivamente.\"\"\"\n    if n == 0:\n        return 1\n    return n * fatorial(n - 1)",
+    "corrigido": false
+  },
+  {
+    "id": "g17",
+    "categoria": "sqlite",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "SELECT COUNT(*) FROM pessoas WHERE idade > 25;",
+    "corrigido": false
+  },
+  {
+    "id": "g18",
+    "categoria": "sqlite",
+    "sem_loop_sucesso": true,
+    "com_loop_sucesso": true,
+    "tentativas_com_loop": 1,
+    "codigo_original": "SELECT (nome || ' - ' || CAST(idade AS TEXT)) AS nome_e_idade\nFROM pessoas;",
+    "corrigido": false
+  }
+]

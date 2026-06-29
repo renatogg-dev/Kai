@@ -12,7 +12,7 @@
     "categoria": "sqlite",
     "tipo": "retrieval",
     "recall_at_k": 1,
-    "reciprocal_rank": 1.0,
+    "reciprocal_rank": 0.5,
     "faithfulness": "sim"
   },
   {
@@ -35,8 +35,8 @@
     "id": "g05",
     "categoria": "postgresql",
     "tipo": "retrieval",
-    "recall_at_k": 0,
-    "reciprocal_rank": 0.0,
+    "recall_at_k": 1,
+    "reciprocal_rank": 1.0,
     "faithfulness": "sim"
   },
   {
@@ -45,7 +45,7 @@
     "tipo": "retrieval",
     "recall_at_k": 1,
     "reciprocal_rank": 1.0,
-    "faithfulness": "parcial"
+    "faithfulness": "sim"
   },
   {
     "id": "g07",
@@ -85,7 +85,7 @@
     "tipo": "retrieval",
     "recall_at_k": 1,
     "reciprocal_rank": 1.0,
-    "faithfulness": "parcial"
+    "faithfulness": "sim"
   },
   {
     "id": "g12",
@@ -108,7 +108,39 @@
     "categoria": "sqlite",
     "tipo": "codigo",
     "recall_at_k": 1,
+    "reciprocal_rank": 0.5,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g15",
+    "categoria": "python",
+    "tipo": "codigo",
+    "recall_at_k": 1,
     "reciprocal_rank": 1.0,
+    "faithfulness": "parcial"
+  },
+  {
+    "id": "g16",
+    "categoria": "python",
+    "tipo": "codigo",
+    "recall_at_k": 1,
+    "reciprocal_rank": 0.5,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g17",
+    "categoria": "sqlite",
+    "tipo": "codigo",
+    "recall_at_k": 1,
+    "reciprocal_rank": 0.5,
+    "faithfulness": "sim"
+  },
+  {
+    "id": "g18",
+    "categoria": "sqlite",
+    "tipo": "codigo",
+    "recall_at_k": 0,
+    "reciprocal_rank": 0.0,
     "faithfulness": "parcial"
   }
 ]
