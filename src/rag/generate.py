@@ -36,7 +36,7 @@ def build_context(hits: list[dict]) -> str:
         blocks.append(f"{header}\n{hit['text']}")
     return "\n\n---\n\n".join(blocks)
 
-def generate(query: str, hits: list[dict]) -> str:
+def generate(query: str, hits: list[dict], history: list[dict] | None = None) -> str:
     context = build_context(hits)
 
     user_message = f"""CONTEXTO:
@@ -44,11 +44,17 @@ def generate(query: str, hits: list[dict]) -> str:
 
 PERGUNTA: {query}"""
 
+    messages = []
+    if history:
+        for h in history[-6:]:  # ultimas 3 trocas
+            messages.append({"role": h["role"], "content": h["content"]})
+    messages.append({"role": "user", "content": user_message})
+
     response = client.messages.create(
         model=MODEL,
         max_tokens=1000,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_message}],
+        messages=messages,
     )
 
     return response.content[0].text
