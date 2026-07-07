@@ -12,7 +12,7 @@ from src.rag.pipeline import ask
 from src.execution.sandbox import extract_code_blocks
 from src.execution.verify_loop import verify_and_correct
 
-st.set_page_config(page_title="Kai — RAG Python/SQL", page_icon="🐍", layout="wide")
+st.set_page_config(page_title="Kai — RAG Python/SQL", layout="wide")
 
 
 @st.cache_resource
@@ -30,23 +30,23 @@ if "messages" not in st.session_state:
 
 # ---------- SIDEBAR ----------
 with st.sidebar:
-    st.title("🐍 Kai")
+    st.title("Kai")
     st.caption("RAG sobre documentação Python + SQL (SQLite/PostgreSQL)")
 
-    page = st.radio("Navegação", ["💬 Chat", "📊 Eval Dashboard"])
+    page = st.radio("Navegação", ["Chat", "Eval Dashboard"])
 
     st.divider()
     dbms_filter = st.selectbox("Filtrar por SGBD", ["Todos", "sqlite", "postgresql"])
     executar_codigo = st.checkbox("Execution loop (valida/autocorrige código)", value=True)
 
-    if st.button("🗑️ Limpar conversa"):
+    if st.button("Limpar conversa"):
         st.session_state.messages = []
         st.rerun()
 
 dbms = None if dbms_filter == "Todos" else dbms_filter
 
 # ---------- PÁGINA CHAT ----------
-if page == "💬 Chat":
+if page == "Chat":
     st.title("Kai — RAG Python + SQL")
 
     # Renderiza o histórico
@@ -57,11 +57,11 @@ if page == "💬 Chat":
             if msg["role"] == "assistant":
                 if msg.get("exec_result"):
                     exec_result = msg["exec_result"]
-                    status = "✅ Código validado" if exec_result["sucesso_final"] else "❌ Código não passou na verificação"
+                    status = "validado" if exec_result["sucesso_final"] else "não passou na verificação"
                     with st.expander(f"Verificação de execução — {status}"):
                         for t in exec_result["tentativas"]:
-                            icone = "✅" if t["sucesso"] else "❌"
-                            st.markdown(f"**{icone} Tentativa {t['numero']}**")
+                            marca = "ok" if t["sucesso"] else "falha"
+                            st.markdown(f"**Tentativa {t['numero']} ({marca})**")
                             st.code(t["codigo"])
                             st.text(t["stdout"] if t["sucesso"] else t["stderr"])
 
@@ -89,7 +89,7 @@ if page == "💬 Chat":
             st.markdown(result["answer"])
 
             if result["retrieval_query"] != result["query"]:
-                st.caption(f"🔍 Interpretada para busca como: *{result['retrieval_query']}*")
+                st.caption(f"Interpretada para busca como: *{result['retrieval_query']}*")
             exec_result = None
             blocos = extract_code_blocks(result["answer"])
             eh_pedido_de_codigo = is_code_generation_request(query)
@@ -97,15 +97,15 @@ if page == "💬 Chat":
             if blocos and executar_codigo and eh_pedido_de_codigo:
                 with st.spinner("Validando código no sandbox..."):
                     exec_result = verify_and_correct(query, result["answer"])
-                status = "✅ Código validado" if exec_result["sucesso_final"] else "❌ Código não passou na verificação"
+                status = "validado" if exec_result["sucesso_final"] else "não passou na verificação"
                 with st.expander(f"Verificação de execução — {status}"):
                     for t in exec_result["tentativas"]:
-                        icone = "✅" if t["sucesso"] else "❌"
-                        st.markdown(f"**{icone} Tentativa {t['numero']}**")
+                        marca = "ok" if t["sucesso"] else "falha"
+                        st.markdown(f"**Tentativa {t['numero']} ({marca})**")
                         st.code(t["codigo"])
                         st.text(t["stdout"] if t["sucesso"] else t["stderr"])
             elif blocos and not eh_pedido_de_codigo:
-                st.caption("ℹ️ Código de exemplo ilustrativo — verificação de execução não aplicada (pergunta conceitual, não pedido de geração).")
+                st.caption("Código de exemplo ilustrativo — verificação de execução não aplicada (pergunta conceitual, não pedido de geração).")
             with st.expander("Fontes usadas"):
                 for hit in result["hits"]:
                     meta = hit["metadata"]

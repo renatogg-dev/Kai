@@ -22,7 +22,7 @@ SOURCES = {
     "postgres_datatype.html": "https://www.postgresql.org/docs/current/datatype.html",
 }
 
-headers = {"User-Agent": "Mozilla/5.0 (projeto-kai-portfolio)"}
+headers = {"User-Agent": "Mozilla/5.0 (kai-doc-ingest)"}
 manifest = {}
 
 for filename, url in SOURCES.items():
